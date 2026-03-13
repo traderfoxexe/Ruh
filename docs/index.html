@@ -222,46 +222,49 @@
     }
 
     .contract-address {
-      margin-top: 48px;
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
       background: rgba(232, 220, 200, 0.04);
       border: 1px solid rgba(232, 220, 200, 0.08);
       border-radius: 100px;
-      padding: 14px 28px;
-      opacity: 0;
+      padding: 8px 16px;
+      transition: all 0.4s ease;
+    }
+    .contract-address:hover {
+      background: rgba(232, 220, 200, 0.07);
+      border-color: rgba(232, 220, 200, 0.15);
     }
     .contract-label {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 500;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: rgba(232, 220, 200, 0.35);
+      color: rgba(232, 220, 200, 0.3);
     }
     .contract-value {
       font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
-      font-size: 13px;
+      font-size: 11px;
       color: var(--sand);
       cursor: pointer;
-      padding: 4px 14px;
-      border-radius: 6px;
+      padding: 3px 10px;
+      border-radius: 5px;
       background: rgba(232, 220, 200, 0.06);
       transition: all 0.3s ease;
       position: relative;
       letter-spacing: 0.5px;
     }
     .contract-value:hover {
-      background: rgba(232, 220, 200, 0.12);
+      background: rgba(232, 220, 200, 0.14);
       color: var(--cream);
     }
     .contract-value::after {
       content: 'copied!';
       position: absolute;
-      top: -32px; left: 50%;
-      transform: translateX(-50%) translateY(4px);
+      bottom: -28px; left: 50%;
+      transform: translateX(-50%) translateY(-4px);
       font-family: 'Inter', sans-serif;
-      font-size: 10px;
+      font-size: 9px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       color: var(--sage);
@@ -1040,9 +1043,10 @@
     .nav-toggle.open span:nth-child(2) { opacity: 0; }
     .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    @media (max-width: 768px) {
-      nav { padding: 20px 24px; }
-      nav.scrolled { padding: 16px 24px; }
+    /* Tablet: hide nav links, keep CA pill */
+    @media (max-width: 1024px) {
+      nav { padding: 20px 32px; }
+      nav.scrolled { padding: 16px 32px; }
       .nav-links { display: none; }
       .nav-toggle { display: block; }
 
@@ -1055,33 +1059,82 @@
         border-bottom: 1px solid rgba(232, 220, 200, 0.06);
       }
 
-      .hero { min-height: 90vh; padding: 120px 20px 80px; }
-      .hero-tagline { font-size: clamp(36px, 10vw, 64px); }
-      section { padding: 100px 20px; }
-      .get-started { padding: 100px 20px; }
+      section { padding: 120px 24px; }
+      .get-started { padding: 140px 24px; }
+      .section-title { font-size: clamp(40px, 6vw, 72px); }
 
       .features-grid { grid-template-columns: 1fr; gap: 16px; }
-      .feature-card { padding: 40px 32px; }
-      .features::before { display: none; }
-
-      .video-wrapper::before, .video-wrapper::after { display: none; }
-      .video-container { border-radius: 16px; }
+      .feature-card { padding: 44px 36px; }
 
       .steps { grid-template-columns: 1fr 1fr; gap: 48px 24px; }
       .steps::before { display: none; }
 
-      .score-demo { gap: 40px; }
-      .score-ring { width: 150px; height: 150px; }
-      .score-ring .value { font-size: 48px; }
+      .score-demo { gap: 56px; }
+      .score-ring { width: 170px; height: 170px; }
+      .score-ring .value { font-size: 54px; }
 
       .setup-steps { flex-direction: column; align-items: center; }
       .setup-step { max-width: 100%; }
     }
 
+    /* Mobile */
+    @media (max-width: 768px) {
+      nav { padding: 18px 20px; }
+      nav.scrolled { padding: 14px 20px; }
+
+      .contract-address { display: none; }
+
+      .hero { min-height: 90vh; padding: 110px 20px 80px; }
+      .hero-tagline { font-size: clamp(36px, 10vw, 64px); }
+      .hero-logo-img { width: clamp(120px, 30vw, 180px); margin-bottom: 32px; }
+      .hero-sub { font-size: 15px; margin-bottom: 48px; }
+
+      section { padding: 80px 20px; }
+      .get-started { padding: 100px 20px; }
+      .section-title { font-size: clamp(32px, 8vw, 52px); }
+      .section-desc { font-size: 15px; }
+
+      .feature-card { padding: 36px 28px; }
+      .features::before { display: none; }
+
+      .video-wrapper::before, .video-wrapper::after { display: none; }
+      .video-container { border-radius: 14px; }
+
+      .score-demo { gap: 40px; }
+      .score-ring { width: 140px; height: 140px; }
+      .score-ring .value { font-size: 44px; }
+
+      .btn-primary, .btn-secondary { padding: 16px 32px; font-size: 11px; }
+      .nav-cta { padding: 10px 22px !important; }
+    }
+
+    /* Small mobile */
     @media (max-width: 480px) {
+      .hero { padding: 100px 16px 60px; }
+      .hero-tagline { font-size: clamp(28px, 11vw, 48px); letter-spacing: 0; }
+      .hero-sub { font-size: 14px; max-width: 320px; }
+      .hero-actions { flex-direction: column; align-items: center; gap: 14px; }
+      .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+
+      section { padding: 64px 16px; }
+      .get-started { padding: 80px 16px; }
+      .section-title { font-size: clamp(28px, 9vw, 40px); }
+      .features-header { margin-bottom: 48px; }
+
       .steps { grid-template-columns: 1fr; gap: 40px; }
-      .hero-actions { flex-direction: column; align-items: center; }
-      .score-demo { flex-direction: column; align-items: center; }
+      .step-number { width: 72px; height: 72px; font-size: 28px; }
+      .steps-header { margin-bottom: 56px; }
+
+      .score-demo { flex-direction: column; align-items: center; gap: 48px; }
+      .score-ring { width: 160px; height: 160px; }
+      .score-ring .value { font-size: 50px; }
+      .demo-header { margin-bottom: 56px; }
+
+      .setup-step { padding: 28px 24px; }
+      .setup-steps { gap: 16px; margin-top: 56px; }
+
+      .demo-video-header { margin-bottom: 48px; }
+      .footer-links { flex-direction: column; gap: 16px; }
     }
 
     /* ═══════════════════════════════════════════
@@ -1159,6 +1212,10 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">ruh</a>
+    <div class="contract-address" id="contractPill">
+      <span class="contract-label">CA:</span>
+      <span class="contract-value" id="contractAddress" onclick="navigator.clipboard.writeText(this.textContent).then(()=>{this.classList.add('copied');setTimeout(()=>this.classList.remove('copied'),1500)})">coming soon</span>
+    </div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
@@ -1188,10 +1245,6 @@
           <span>View on GitHub</span>
         </a>
         <a href="#demo" class="btn-secondary">Watch the demo</a>
-      </div>
-      <div class="contract-address">
-        <span class="contract-label">Contract Address:</span>
-        <span class="contract-value" id="contractAddress" onclick="navigator.clipboard.writeText(this.textContent).then(()=>{this.classList.add('copied');setTimeout(()=>this.classList.remove('copied'),1500)})">coming soon</span>
       </div>
     </div>
     <div class="hero-scroll-hint">
@@ -1549,7 +1602,7 @@
     (() => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
       // Kill CSS animations
-      gsap.set('.hero-logo-img, .hero-tagline, .hero-sub, .hero-actions, .contract-address, .hero-scroll-hint', {
+      gsap.set('.hero-logo-img, .hero-tagline, .hero-sub, .hero-actions, .hero-scroll-hint', {
         opacity: 0, y: 40, clearProps: 'animation'
       });
 
@@ -1557,8 +1610,7 @@
         .to('.hero-tagline', { opacity: 1, y: 0, duration: 1, }, 0.5)
         .to('.hero-sub', { opacity: 1, y: 0, duration: 0.9 }, 0.75)
         .to('.hero-actions', { opacity: 1, y: 0, duration: 0.9 }, 0.95)
-        .to('.contract-address', { opacity: 1, y: 0, duration: 0.8 }, 1.15)
-        .to('.hero-scroll-hint', { opacity: 1, y: 0, duration: 0.8 }, 1.4);
+        .to('.hero-scroll-hint', { opacity: 1, y: 0, duration: 0.8 }, 1.3);
     })();
 
     // ═══════════════════════════════════════
