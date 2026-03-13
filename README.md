@@ -24,7 +24,7 @@ pronounced [ˈɹu] - rooh
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/RSHVR/ruh.git
+   git clone https://github.com/traderfoxexe/Ruh.git
    cd ruh/extension
    ```
 

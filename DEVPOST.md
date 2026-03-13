@@ -265,7 +265,7 @@ Ruh democratizes product safety analysis—putting laboratory-grade ingredient a
 
 ## 🔗 Links
 
-- **GitHub Repository**: https://github.com/RSHVR/ruh
+- **GitHub Repository**: https://github.com/traderfoxexe/Ruh
 - **Live Demo**: [Chrome Extension - Load Unpacked]
 
 ---
