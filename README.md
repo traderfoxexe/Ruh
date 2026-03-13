@@ -78,7 +78,7 @@ pronounced [ˈɹu] - rooh
 
 ## Authors
 
-Arshveer Gahir
+traderfoxexe
 
 ## License
 

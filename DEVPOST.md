@@ -270,4 +270,4 @@ Ruh democratizes product safety analysis—putting laboratory-grade ingredient a
 
 ---
 
-Built with ❤️ by Arshveer Gahir
+Built with ❤️ by traderfoxexe
