@@ -253,6 +253,12 @@
       transition: all 0.3s ease;
       position: relative;
       letter-spacing: 0.5px;
+      max-width: 180px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+      vertical-align: middle;
     }
     .contract-value:hover {
       background: rgba(232, 220, 200, 0.14);
@@ -1214,7 +1220,7 @@
     <a href="#" class="nav-logo">ruh</a>
     <div class="contract-address" id="contractPill">
       <span class="contract-label">CA:</span>
-      <span class="contract-value" id="contractAddress" onclick="navigator.clipboard.writeText(this.textContent).then(()=>{this.classList.add('copied');setTimeout(()=>this.classList.remove('copied'),1500)})">coming soon</span>
+      <span class="contract-value" id="contractAddress" onclick="navigator.clipboard.writeText(this.textContent).then(()=>{this.classList.add('copied');setTimeout(()=>this.classList.remove('copied'),1500)})">6A7CmLCerHVfkoToRe7sUov6Wb1ZmUosax1dgGbWpump</span>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
